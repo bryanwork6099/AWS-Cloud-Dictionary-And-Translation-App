@@ -1,4 +1,4 @@
-# AWS Cloud Dictionary App
+# AWS Cloud Dictionary & Translation App
 
 A serverless, multilingual dictionary and translation web application built using AWS services. Users can search for word definitions, view phonetic pronunciations, save search history, translate text between languages, and automatically detect the source language.
 
@@ -10,7 +10,7 @@ A serverless, multilingual dictionary and translation web application built usin
 
 ## 1. Project Overview
 
-The AWS Cloud Dictionary App is a cloud-based application designed to demonstrate how multiple AWS managed services can work together to build a serverless web application.
+The AWS Cloud Dictionary & Translation App is a cloud-based application designed to demonstrate how multiple AWS managed services can work together to build a serverless web application.
 
 The application provides two main functions:
 
@@ -585,7 +585,7 @@ Through this project, I gained practical experience with:
 
 ## 15. Author
 
-**Project:** AWS Cloud Dictionary App
+**Project:** AWS Cloud Dictionary & Translation App
 
 **Developer:** Bryan
 
