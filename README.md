@@ -159,7 +159,22 @@ Stored information includes:
 - Target language
 - Translation timestamp
 
-## 5. API Endpoints
+## 5. Application Screenshots
+
+The following screenshots show the deployed application's interface and its main features.
+
+| Screenshot | Description |
+|---|---|
+| ![Homepage - Part 1](screenshots/01-homepage-01.png) | Homepage overview — first section |
+| ![Homepage - Part 2](screenshots/02-homepage-02.png) | Homepage overview — second section |
+| ![Dictionary Search](screenshots/03-dictionary-search.png) | Dictionary search interface |
+| ![Dictionary Result](screenshots/04-dictionary-result.png) | Dictionary result with definitions and pronunciation |
+| ![Translation Interface](screenshots/05-translation-interface.png) | Translation mode and language selectors |
+| ![Translation Result](screenshots/06-translation-result.png) | Translated text result |
+| ![Automatic Language Detection](screenshots/07-translation-detection.png) | Automatic source-language detection |
+| ![DynamoDB History](screenshots/07-dynamodb-history.png) | Dictionary and translation history stored in DynamoDB |
+
+## 6. API Endpoints
 
 **API Base URL**
 
@@ -175,7 +190,7 @@ The application uses the following HTTP API routes:
 | POST | `/history` | Retrieves search and translation history |
 | POST | `/translate` | Translates text between languages |
 
-### 5.1 Dictionary Endpoint
+### 6.1 Dictionary Endpoint
 
 Example request:
 
@@ -185,7 +200,7 @@ GET /dictionary?word=hello&language=en
 
 Retrieves dictionary information for the requested word and language.
 
-### 5.2 History Endpoint
+### 6.2 History Endpoint
 
 Example request:
 
@@ -195,7 +210,7 @@ POST /history?userId=guest001
 
 Retrieves the user's stored history from DynamoDB.
 
-### 5.3 Translation Endpoint
+### 6.3 Translation Endpoint
 
 Example request:
 
@@ -230,7 +245,7 @@ Example response:
 
 For automatic detection, set `sourceLanguage` to `auto`.
 
-## 6. DynamoDB Data Storage
+## 7. DynamoDB Data Storage
 
 **Table Name:** `DictionarySearchHistory`
 
@@ -274,7 +289,7 @@ Example translation record:
 
 *The examples above illustrate the record structure; actual timestamps and values depend on user activity.*
 
-## 7. IAM Security and Permissions
+## 8. IAM Security and Permissions
 
 AWS IAM is used to control access between the Lambda function and other AWS services.
 
@@ -307,7 +322,7 @@ API Gateway is granted permission to invoke the Lambda function through its reso
 - Configure CORS to allow only the required frontend origins.
 - Avoid using a shared guest identifier for applications that require real user separation or authentication.
 
-## 8. Project Structure
+## 9. Project Structure
 
 ```text
 AWS-Cloud-Dictionary-App/
@@ -317,6 +332,16 @@ AWS-Cloud-Dictionary-App/
 │   ├── style.css
 │   ├── script.js
 │   └── translate-policy.json
+│
+├── screenshots/
+│   ├── 01-homepage-01.png
+│   ├── 02-homepage-02.png
+│   ├── 03-dictionary-search.png
+│   ├── 04-dictionary-result.png
+│   ├── 05-translation-interface.png
+│   ├── 06-translation-result.png
+│   ├── 07-translation-detection.png
+│   └── 07-dynamodb-history.png
 │
 ├── backup/
 │   ├── lambda_before_translate.zip
@@ -329,7 +354,7 @@ AWS-Cloud-Dictionary-App/
 
 The backup directory contains development backups and is not required for the live frontend deployment.
 
-## 9. Deployment
+## 10. Deployment
 
 ### Prerequisites
 
@@ -452,7 +477,7 @@ Verify:
 6. Translation history is saved.
 7. The deployed Amplify website works correctly.
 
-## 10. Testing and Validation
+## 11. Testing and Validation
 
 The following tests were completed successfully.
 
@@ -503,7 +528,7 @@ Translated output:
 Hi, how are you?
 ```
 
-## 11. Cost Considerations
+## 12. Cost Considerations
 
 This project uses AWS managed services that may incur charges.
 
@@ -527,7 +552,7 @@ Important considerations:
 
 Always check the current AWS pricing for your region before deploying or increasing usage.
 
-## 12. Future Improvements
+## 13. Future Improvements
 
 Potential enhancements include:
 
@@ -541,7 +566,7 @@ Potential enhancements include:
 - Automated deployment through a CI/CD pipeline.
 - Enhanced monitoring and application logging.
 
-## 13. Learning Outcomes
+## 14. Learning Outcomes
 
 Through this project, I gained practical experience with:
 
@@ -558,7 +583,7 @@ Through this project, I gained practical experience with:
 - Integrating GitHub with AWS Amplify for automated frontend deployment.
 - Troubleshooting API Gateway, Lambda, IAM, and CloudWatch issues.
 
-## 14. Author
+## 15. Author
 
 **Project:** AWS Cloud Dictionary App
 
