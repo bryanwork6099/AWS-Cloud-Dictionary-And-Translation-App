@@ -3,163 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cloud Dictionary - Search word definitions powered by AWS.">
-    <title>Cloud Dictionary | Discover Every Word</title>
+    <meta name="description" content="CloudDictionary - A multilingual dictionary and translation platform powered by AWS.">
+    <title>CloudDictionary | Multilingual Dictionary</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <div class="app-container">
-
-        <!-- Navigation -->
-        <nav class="navbar">
+    <header class="header">
+        <div class="header-container">
             <a href="#" class="brand">
-                <span class="brand-icon">☁</span>
-                <span>Cloud<span class="brand-highlight">Dictionary</span></span>
+                <div class="brand-icon">C</div>
+                <span>CloudDictionary</span>
             </a>
-
-            <div class="nav-status">
+            <div class="header-badge">
                 <span class="status-dot"></span>
                 AWS Powered
             </div>
-        </nav>
+        </div>
+    </header>
 
+    <main class="main-container">
 
-        <!-- Main Content -->
-        <main class="main-content">
+        <section class="hero">
+            <span class="eyebrow">YOUR MULTILINGUAL LANGUAGE COMPANION</span>
+            <h1>Words connect the <span>world.</span></h1>
+            <p>Discover meanings, explore languages, and translate text with ease.</p>
+        </section>
 
-            <!-- Hero Section -->
-            <section class="hero-section">
+        <section class="workspace">
 
-                <div class="hero-label">
-                    <span>✦</span> YOUR SMART DICTIONARY
-                </div>
-
-                <h1>
-                    Discover the meaning<br>
-                    of <span>every word.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Search, learn and expand your vocabulary.
-                    All in one simple dictionary.
-                </p>
-
-                <!-- Search Form -->
-                <form id="searchForm" class="search-form">
-
-                    <span class="search-icon">⌕</span>
-
-                    <input
-                        type="text"
-                        id="wordInput"
-                        placeholder="Search for a word..."
-                        autocomplete="off"
-                        required
-                    >
-
-                    <button type="submit" id="searchButton">
-                        Search <span>→</span>
-                    </button>
-
-                </form>
-
-                <p id="message" class="message"></p>
-
-            </section>
-
-
-            <!-- Quick Information -->
-            <section class="quick-info">
-
-                <div class="info-card">
-                    <div class="info-icon blue">✦</div>
-                    <div>
-                        <p class="info-label">DICTIONARY</p>
-                        <h3>Instant Definitions</h3>
-                        <p>Find word meanings quickly.</p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <div class="info-icon purple">↗</div>
-                    <div>
-                        <p class="info-label">SEARCH HISTORY</p>
-                        <h3>Track Your Searches</h3>
-                        <p>Revisit previously searched words.</p>
-                    </div>
-                </div>
-
-            </section>
-
-
-            <!-- Dictionary Results -->
-            <section id="resultSection" class="result-section hidden">
-
-                <div class="section-heading">
-                    <div>
-                        <span class="section-label">DICTIONARY RESULT</span>
-                        <h2>Word Definition</h2>
-                    </div>
-
-                    <span class="result-badge">Found</span>
-                </div>
-
-                <div class="word-header">
-                    <h2 id="resultWord"></h2>
-                    <p id="phonetic"></p>
-                </div>
-
-                <div id="meanings"></div>
-
-            </section>
-
-
-            <!-- Search History -->
-            <section class="history-section">
-
-                <div class="section-heading">
-
-                    <div>
-                        <span class="section-label">YOUR ACTIVITY</span>
-                        <h2>Recent Searches</h2>
-                    </div>
-
-                    <button id="refreshHistory" class="refresh-button">
-                        ↻ Refresh
-                    </button>
-
-                </div>
-
-                <div id="historyList" class="history-list">
-                    <p class="empty-history">Loading search history...</p>
-                </div>
-
-            </section>
-
-        </main>
-
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-brand">
-                ☁ CloudDictionary
+            <div class="mode-tabs">
+                <button class="mode-tab active" id="dictionaryTab" type="button">
+                    <span>📖</span> Dictionary
+                </button>
+                <button class="mode-tab" id="translationTab" type="button">
+                    <span>🌐</span> Translation
+                </button>
             </div>
 
-            <p>
-                Built with AWS Lambda · API Gateway · DynamoDB · Amplify
-            </p>
+            <!-- DICTIONARY MODE -->
+            <section id="dictionaryMode" class="mode-content">
 
-            <span>© 2026 Cloud Dictionary. All rights reserved.</span>
-        </footer>
+                <div class="section-heading">
+                    <h2>Dictionary lookup</h2>
+                    <p>Find definitions and pronunciations across languages.</p>
+                </div>
 
-    </div>
+                <form id="searchForm">
+                    <div class="input-group">
+                        <label for="wordInput">Enter a word</label>
+                        <input
+                            type="text"
+                            id="wordInput"
+                            placeholder="e.g. hello, rumah, bonjour..."
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="dictionaryLanguage">Dictionary language</label>
+                        <select id="dictionaryLanguage">
+                            <option value="en">English</option>
+                            <option value="ms">Malay</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <option value="de">German</option>
+                            <option value="id">Indonesian</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="hi">Hindi</option>
+                            <option value="ar">Arabic</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="searchButton" class="primary-button">
+                        Search Dictionary →
+                    </button>
+                </form>
+
+                <div id="message" class="message" role="status" aria-live="polite"></div>
+
+                <section id="resultSection" class="result-section" hidden>
+                    <div class="result-header">
+                        <div>
+                            <span class="result-label">WORD DEFINITION</span>
+                            <h2 id="resultWord"></h2>
+                            <p id="phonetic" class="phonetic"></p>
+                        </div>
+                        <span id="resultLanguage" class="language-badge"></span>
+                    </div>
+
+                    <div id="meanings" class="meanings"></div>
+                </section>
+
+            </section>
+
+            <!-- TRANSLATION MODE -->
+            <section id="translationMode" class="mode-content" hidden>
+
+                <div class="section-heading">
+                    <h2>Text translation</h2>
+                    <p>Translate words and sentences between languages.</p>
+                </div>
+
+                <div class="translation-languages">
+                    <div class="input-group">
+                        <label for="sourceLanguage">Translate from</label>
+                        <select id="sourceLanguage">
+                            <option value="auto">Auto detect</option>
+                            <option value="en">English</option>
+                            <option value="ms">Malay</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <option value="de">German</option>
+                            <option value="id">Indonesian</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="hi">Hindi</option>
+                            <option value="ar">Arabic</option>
+                        </select>
+                    </div>
+
+                    <button id="swapLanguages" class="swap-button" type="button" title="Swap languages">⇄</button>
+
+                    <div class="input-group">
+                        <label for="targetLanguage">Translate to</label>
+                        <select id="targetLanguage">
+                            <option value="ms">Malay</option>
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <option value="de">German</option>
+                            <option value="id">Indonesian</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="hi">Hindi</option>
+                            <option value="ar">Arabic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group translation-input">
+                    <label for="translationInput">Text to translate</label>
+                    <textarea
+                        id="translationInput"
+                        rows="5"
+                        maxlength="5000"
+                        placeholder="Enter a word, phrase, or sentence..."
+                    ></textarea>
+                    <span class="character-count" id="characterCount">0 / 5000</span>
+                </div>
+
+                <button type="button" id="translateButton" class="primary-button">
+                    Translate Text →
+                </button>
+
+                <div id="translationMessage" class="message" role="status" aria-live="polite"></div>
+
+                <section id="translationResult" class="translation-result" hidden>
+                    <span class="result-label">TRANSLATION RESULT</span>
+                    <p id="translatedText"></p>
+                    <div class="translation-meta" id="translationMeta"></div>
+                </section>
+
+            </section>
+
+        </section>
+
+        <!-- RECENT SEARCHES -->
+        <section class="history-section">
+            <div class="history-heading">
+                <div>
+                    <span class="eyebrow">YOUR ACTIVITY</span>
+                    <h2>Recent searches</h2>
+                </div>
+                <button id="refreshHistory" class="refresh-button" type="button">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <div id="historyList" class="history-list">
+                <p class="empty-history">Loading recent searches...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Built with AWS Lambda · API Gateway · DynamoDB · Amazon Translate · Amplify</p>
+        <p class="attribution">
+            Dictionary data provided by
+            <a href="https://freedictionaryapi.com/" target="_blank" rel="noopener noreferrer">FreeDictionaryAPI</a>
+            and
+            <a href="https://www.wiktionary.org/" target="_blank" rel="noopener noreferrer">Wiktionary</a>.
+            Wiktionary content is available under CC BY-SA 4.0 where applicable.
+        </p>
+        <p>© 2026 CloudDictionary. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
