@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>☁️ Cloud Dictionary</h1>
+            <p>Your simple dictionary powered by AWS</p>
+        </header>
+
+        <main>
+
+            <section class="search-section">
+                <h2>Find a Word</h2>
+
+                <form id="searchForm">
+                    <input
+                        type="text"
+                        id="wordInput"
+                        placeholder="Enter a word..."
+                        required
+                    >
+                    <button type="submit" id="searchButton">
+                        Search
+                    </button>
+                </form>
+
+                <p id="message"></p>
+            </section>
+
+            <section id="resultSection" class="result-section hidden">
+                <h2 id="resultWord"></h2>
+                <p id="phonetic"></p>
+                <div id="meanings"></div>
+            </section>
+
+            <section class="history-section">
+                <div class="history-header">
+                    <h2>Recent Search History</h2>
+                    <button id="refreshHistory">Refresh</button>
+                </div>
+
+                <div id="historyList">
+                    <p>Loading search history...</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Powered by AWS Lambda, API Gateway and DynamoDB</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
