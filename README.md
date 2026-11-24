@@ -341,7 +341,7 @@ AWS-Cloud-Dictionary-App/
 │   ├── 05-translation-interface.png
 │   ├── 06-translation-result.png
 │   ├── 07-translation-detection.png
-│   └── 07-dynamodb-history.png
+│   └── 08-dynamodb-history.png
 │
 ├── backup/
 │   ├── lambda_before_translate.zip
