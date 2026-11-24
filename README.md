@@ -4,7 +4,7 @@ A serverless, multilingual dictionary and translation web application built usin
 
 **Live Application:** https://main.d982med8yigaz.amplifyapp.com/
 
-**GitHub Repository:** https://github.com/bryanwork6099/AWS-Cloud-Dictionary-App
+**GitHub Repository:** https://github.com/bryanwork6099/AWS-Cloud-Dictionary-And-Translation-App
 
 ---
 
