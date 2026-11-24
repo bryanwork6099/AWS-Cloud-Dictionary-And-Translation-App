@@ -1,0 +1,16 @@
+{
+  "AllowOrigins": [
+    "https://main.d982med8yigaz.amplifyapp.com",
+    "http://localhost:8000"
+  ],
+  "AllowMethods": [
+    "GET",
+    "POST",
+    "OPTIONS"
+  ],
+  "AllowHeaders": [
+    "Content-Type"
+  ],
+  "AllowCredentials": false,
+  "MaxAge": 300
+}
