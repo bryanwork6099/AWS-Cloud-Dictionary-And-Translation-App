@@ -3,63 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Dictionary</title>
+    <meta name="description" content="Cloud Dictionary - Search word definitions powered by AWS.">
+    <title>Cloud Dictionary | Discover Every Word</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="container">
+    <div class="app-container">
 
-        <header>
-            <h1>☁️ Cloud Dictionary</h1>
-            <p>Your simple dictionary powered by AWS</p>
-        </header>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="#" class="brand">
+                <span class="brand-icon">☁</span>
+                <span>Cloud<span class="brand-highlight">Dictionary</span></span>
+            </a>
 
-        <main>
+            <div class="nav-status">
+                <span class="status-dot"></span>
+                AWS Powered
+            </div>
+        </nav>
 
-            <section class="search-section">
-                <h2>Find a Word</h2>
 
-                <form id="searchForm">
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+
+                <div class="hero-label">
+                    <span>✦</span> YOUR SMART DICTIONARY
+                </div>
+
+                <h1>
+                    Discover the meaning<br>
+                    of <span>every word.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Search, learn and expand your vocabulary.
+                    All in one simple dictionary.
+                </p>
+
+                <!-- Search Form -->
+                <form id="searchForm" class="search-form">
+
+                    <span class="search-icon">⌕</span>
+
                     <input
                         type="text"
                         id="wordInput"
-                        placeholder="Enter a word..."
+                        placeholder="Search for a word..."
+                        autocomplete="off"
                         required
                     >
+
                     <button type="submit" id="searchButton">
-                        Search
+                        Search <span>→</span>
                     </button>
+
                 </form>
 
-                <p id="message"></p>
+                <p id="message" class="message"></p>
+
             </section>
 
+
+            <!-- Quick Information -->
+            <section class="quick-info">
+
+                <div class="info-card">
+                    <div class="info-icon blue">✦</div>
+                    <div>
+                        <p class="info-label">DICTIONARY</p>
+                        <h3>Instant Definitions</h3>
+                        <p>Find word meanings quickly.</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon purple">↗</div>
+                    <div>
+                        <p class="info-label">SEARCH HISTORY</p>
+                        <h3>Track Your Searches</h3>
+                        <p>Revisit previously searched words.</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Dictionary Results -->
             <section id="resultSection" class="result-section hidden">
-                <h2 id="resultWord"></h2>
-                <p id="phonetic"></p>
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">DICTIONARY RESULT</span>
+                        <h2>Word Definition</h2>
+                    </div>
+
+                    <span class="result-badge">Found</span>
+                </div>
+
+                <div class="word-header">
+                    <h2 id="resultWord"></h2>
+                    <p id="phonetic"></p>
+                </div>
+
                 <div id="meanings"></div>
+
             </section>
 
+
+            <!-- Search History -->
             <section class="history-section">
-                <div class="history-header">
-                    <h2>Recent Search History</h2>
-                    <button id="refreshHistory">Refresh</button>
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">YOUR ACTIVITY</span>
+                        <h2>Recent Searches</h2>
+                    </div>
+
+                    <button id="refreshHistory" class="refresh-button">
+                        ↻ Refresh
+                    </button>
+
                 </div>
 
-                <div id="historyList">
-                    <p>Loading search history...</p>
+                <div id="historyList" class="history-list">
+                    <p class="empty-history">Loading search history...</p>
                 </div>
+
             </section>
 
         </main>
 
-        <footer>
-            <p>Powered by AWS Lambda, API Gateway and DynamoDB</p>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-brand">
+                ☁ CloudDictionary
+            </div>
+
+            <p>
+                Built with AWS Lambda · API Gateway · DynamoDB · Amplify
+            </p>
+
+            <span>© 2026 Cloud Dictionary. All rights reserved.</span>
         </footer>
 
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
