@@ -172,7 +172,7 @@ The following screenshots show the deployed application's interface and its main
 | ![Translation Interface](screenshots/05-translation-interface.png) | Translation mode and language selectors |
 | ![Translation Result](screenshots/06-translation-result.png) | Translated text result |
 | ![Automatic Language Detection](screenshots/07-translation-detection.png) | Automatic source-language detection |
-| ![DynamoDB History](screenshots/07-dynamodb-history.png) | Dictionary and translation history stored in DynamoDB |
+| ![DynamoDB History](screenshots/08-dynamodb-history.png) | Dictionary and translation history stored in DynamoDB |
 
 ## 6. API Endpoints
 
